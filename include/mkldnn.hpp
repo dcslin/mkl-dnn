@@ -870,13 +870,13 @@ inline void check_num_parameters(const const_mkldnn_primitive_desc_t
     const int n_outputs_expected = mkldnn_primitive_desc_query_s32(
             aprimitive_desc, mkldnn_query_num_of_outputs_s32, 0);
     if (n_outputs_expected > n_outputs ) {
-        std::string message = "could not create " + prim_name +
-            " primitive, not enought output parameters";
+        std::string message = "could not create " + prim_name + " primitive, not enough output parameters: "
+            + std::to_string(n_outputs_expected) + " expected vs " + std::to_string(n_outputs) + " given";
         throw error(mkldnn_invalid_arguments, message, nullptr);
     }
     if (n_inputs_expected > n_inputs ) {
-        std::string message = "could not create " + prim_name +
-            " primitive, not enought input parameters";
+        std::string message = "could not create " + prim_name + " primitive, not enough input parameters: "
+            + std::to_string(n_outputs_expected) + " expected vs " + std::to_string(n_outputs) + " given";
         throw error(mkldnn_invalid_arguments, message, nullptr);
     }
 }
