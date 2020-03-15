@@ -1,0 +1,21 @@
+package:
+  name: dnnl
+  version: 1.1
+
+source:
+  path: ../
+
+build:
+  number: 0
+  string: build
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake >=2.8.11
+
+about:
+  home: https://github.com/intel/mkl-dnn
+  license: Apache V2
+  license_file: LICENSE
+  summary: Deep Neural Network Library (DNNL).

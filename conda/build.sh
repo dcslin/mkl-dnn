@@ -1,0 +1,6 @@
+export CMAKE_PREFIX_PATH=$PREFIX:$CMAKE_PREFIX_PATH
+export CMAKE_INCLUDE_PATH=$PREFIX/include:$CMAKE_INCLUDE_PATH
+export CMAKE_LIBRARY_PATH=$PREFIX/lib:$CMAKE_LIBRARY_PATH
+mkdir -p build && cd build && cmake -DCMAKE_INSTALL_PREFIX=$PREFIX ..
+make -j
+make install
